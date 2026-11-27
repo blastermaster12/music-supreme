@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090711">
+<title>MUSIC SUPREME</title>
+<link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">♫</span><div><b>MUSIC</b><strong>SUPREME</strong></div></div><button id="profileBtn" class="icon-btn" aria-label="Profile">●</button></header>
+<main>
+<section id="homePage" class="page active">
+  <div class="greeting"><div><small>YOUR SOUND. YOUR WORLD.</small><h1>Feel the music.</h1></div><button id="pickMusic" class="primary-btn">＋ Add music</button></div>
+  <input id="fileInput" type="file" accept="audio/*" multiple hidden>
+  <div class="section-head"><h2>Quick picks</h2><span>YOUR LIBRARY</span></div>
+  <div id="quickPicks" class="song-list empty-state">Add audio files from your phone to start listening.</div>
+  <div class="section-head"><h2>Made for your mood</h2><span>COLLECTIONS</span></div>
+  <div class="mood-grid"><button class="mood-card mood-one" data-mood="Chill">CHILL<br><small>Slow it down</small></button><button class="mood-card mood-two" data-mood="Energy">ENERGY<br><small>Turn it up</small></button><button class="mood-card mood-three" data-mood="Focus">FOCUS<br><small>Find your flow</small></button><button class="mood-card mood-four" data-mood="Late Night">LATE NIGHT<br><small>After hours</small></button></div>
+</section>
+<section id="discoverPage" class="page">
+ <small class="eyebrow">EXPLORE YOUR SOUND</small><h1>Discover</h1>
+ <p class="muted">Your music universe starts with the tracks on your device.</p>
+ <button class="wide-action" id="discoverAdd">＋ Import music from phone</button>
+ <div class="section-head"><h2>Recently added</h2></div><div id="discoverList" class="song-list empty-state">No tracks yet.</div>
+</section>
+<section id="searchPage" class="page">
+ <small class="eyebrow">FIND YOUR NEXT FAVOURITE</small><h1>Search</h1>
+ <input id="searchInput" class="search-input" placeholder="Search songs or artists..." autocomplete="off">
+ <div id="searchResults" class="song-list empty-state">Search your imported music.</div>
+</section>
+<section id="libraryPage" class="page">
+ <small class="eyebrow">ALL YOUR MUSIC IN ONE PLACE</small><h1>Your Library</h1>
+ <div class="library-tabs"><button class="tab active" data-tab="all">All songs</button><button class="tab" data-tab="liked">Liked ♥</button></div>
+ <div id="libraryList" class="song-list empty-state">Your library is waiting for music.</div>
+</section>
+<section id="profilePage" class="page">
+ <small class="eyebrow">MUSIC SUPREME</small><h1>Your space.</h1>
+ <div class="profile-card"><div class="avatar">♫</div><h2>Listening as Guest</h2><p class="muted">Your music stays on this device.</p></div>
+ <div class="setting-row"><span>App version</span><b>1.0.0</b></div><div class="setting-row"><span>Storage</span><b>On device</b></div>
+ <p class="fineprint">MUSIC SUPREME is an independent music player inspired by modern music-app experiences. It is not affiliated with Resso.</p>
+</section>
+</main>
+<nav class="bottom-nav">
+<button class="nav-item active" data-page="homePage"><span>⌂</span>Home</button>
+<button class="nav-item" data-page="discoverPage"><span>✦</span>Discover</button>
+<button class="nav-item" data-page="searchPage"><span>⌕</span>Search</button>
+<button class="nav-item" data-page="libraryPage"><span>▤</span>Library</button>
+</nav>
+<div id="miniPlayer" class="mini-player hidden"><div id="miniArt" class="mini-art">♫</div><div class="mini-meta"><b id="miniTitle">Not playing</b><small id="miniArtist">Choose a song</small></div><button id="miniPlay" class="icon-btn">▶</button><button id="openPlayer" class="icon-btn">⌃</button></div>
+<div id="playerOverlay" class="player-overlay hidden">
+ <div class="player-top"><button id="closePlayer" class="icon-btn">⌄</button><span>NOW PLAYING</span><button id="playerMore" class="icon-btn">•••</button></div>
+ <div id="playerArt" class="player-art">♫</div>
+ <div class="player-info"><div><h2 id="playerTitle">Choose a song</h2><p id="playerArtist">Your library</p></div><button id="likeBtn" class="icon-btn like-btn">♡</button></div>
+ <input id="seekBar" class="seek" type="range" min="0" max="100" value="0">
+ <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+ <div class="controls"><button id="shuffleBtn" class="small-control">⤨</button><button id="prevBtn" class="control">|◀</button><button id="playBtn" class="play-control">▶</button><button id="nextBtn" class="control">▶|</button><button id="repeatBtn" class="small-control">↻</button></div>
+ <div class="player-bottom"><span>♫  MUSIC SUPREME</span><button id="queueBtn" class="text-btn">PLAYING FROM LIBRARY</button></div>
+</div>
+<div id="toast" class="toast"></div>
+<audio id="audio" preload="metadata"></audio>
+<script type="module" src="/src/js/app.js"></script>
+</body></html>
